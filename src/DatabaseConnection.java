@@ -3,13 +3,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static Connection connection;
-    public DatabaseConnection(){
-        String url = "jdbc:sqlite:/home/ares/IdeaProjects/Todo_Application/src/TasksDB.sqlite";
+    static String url = "jdbc:sqlite:/home/ares/IdeaProjects/Todo_Application/src/TasksDB.sqlite";
+
+    private static final Connection connection;
+
+    static {
         try {
             connection = DriverManager.getConnection(url);
         } catch (SQLException e) {
-            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
@@ -23,4 +25,5 @@ public class DatabaseConnection {
             System.err.println(e.getMessage());
         }
     }
+
 }

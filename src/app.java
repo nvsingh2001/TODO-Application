@@ -22,7 +22,7 @@ public class app {
         }
         System.out.println(" ID | Title | Description | Due Date | Status");
         for(Task t: displayedTasks) {
-            System.out.printf(" %d | %s | %s |%s | %s \n", t.getId(), t.getTitle(), t.getDescription(), t.getDueDate(), t.getStatus());
+            System.out.printf(" %d | %s | %s | %s | %s \n", t.getId(), t.getTitle(), t.getDescription(), t.getDueDate(), t.getStatus());
         }
     }
     public static void deleteTask(Scanner input) {
